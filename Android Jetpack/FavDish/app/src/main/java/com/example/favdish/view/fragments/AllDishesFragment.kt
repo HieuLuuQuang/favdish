@@ -60,10 +60,6 @@ class AllDishesFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
