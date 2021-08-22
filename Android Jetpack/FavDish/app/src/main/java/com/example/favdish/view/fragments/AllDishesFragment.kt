@@ -1,5 +1,6 @@
 package com.example.favdish.view.fragments
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
@@ -57,6 +58,10 @@ class AllDishesFragment : Fragment() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
     }
 
     override fun onDestroyView() {
