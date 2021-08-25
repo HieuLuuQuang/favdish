@@ -1,7 +1,6 @@
 package com.example.favdish.view.adapters
 
 import android.app.Activity
-import android.content.ClipData
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
