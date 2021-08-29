@@ -6,11 +6,16 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.favdish.model.entities.FavDish
 
-@Database(entities = [FavDish::class],version = 1)
-abstract class FavDishRoomDatabase: RoomDatabase() {
-    companion object{
+@Database(entities = [FavDish::class], version = 1)
+abstract class FavDishRoomDatabase : RoomDatabase() {
+
+    abstract fun favDishDao(): FavDishDao
+
+    companion object {
+        // Singleton prevents multiple instances of database opening at the
+        // same time.
         @Volatile
-        private var INSTANCE: FavDishRoomDatabase? = null   //nullable singleton
+        private var INSTANCE: FavDishRoomDatabase? = null
 
         fun getDatabase(context: Context): FavDishRoomDatabase {
             // if the INSTANCE is not null, then return it,
@@ -19,13 +24,14 @@ abstract class FavDishRoomDatabase: RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     FavDishRoomDatabase::class.java,
-                    "word_database"
-                ).build()
+                    "fav_dish_database"
+                )
+                    .fallbackToDestructiveMigration()
+                    .build()
                 INSTANCE = instance
                 // return instance
                 instance
             }
         }
     }
-
 }
