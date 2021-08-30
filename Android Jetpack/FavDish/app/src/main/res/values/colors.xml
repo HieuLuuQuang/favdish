@@ -21,4 +21,7 @@
     <color name="secondDarkColor">#2286c3</color>
     <color name="secondTextColor">#000000</color>
     <color name="divider_line_color">#e0e0e0</color>
+
+    <color name="blue_grey_900">#263238</color>
+    <color name="grey_500">#9E9E9E</color>
 </resources>
