@@ -13,23 +13,16 @@ import kotlinx.coroutines.launch
  *
  * @param repository - The repository class is
  */
-class FavDishViewModel(private val repository: FavDishRepository) : ViewModel() {
 
-    /**
-     * Launching a new coroutine to insert the data in a non-blocking way.
-     */
-    fun insert(dish: FavDish) = viewModelScope.launch {
-        // Call the repository function and pass the details.
-        repository.insertFavDishData(dish)
-    }
+/**
+ * Launching a new coroutine to insert the data in a non-blocking way.
+ */
 
-    /** Using LiveData and caching what allDishes returns has several benefits:
-     * We can put an observer on the data (instead of polling for changes) and only
-     * update the UI when the data actually changes.
-     * Repository is completely separated from the UI through the ViewModel.
-    */
-    val allDishesList: LiveData<List<FavDish>> = repository.allDishesList.asLiveData()
-}
+/** Using LiveData and caching what allDishes returns has several benefits:
+ * We can put an observer on the data (instead of polling for changes) and only
+ * update the UI when the data actually changes.
+ * Repository is completely separated from the UI through the ViewModel.
+ */
 
 /**
  * To create the ViewModel we implement a ViewModelProvider.Factory that gets as a parameter the dependencies
@@ -38,6 +31,30 @@ class FavDishViewModel(private val repository: FavDishRepository) : ViewModel() 
  * It will survive configuration changes and even if the Activity is recreated,
  * you'll always get the right instance of the FavDishViewModel class.
  */
+class FavDishViewModel(private val repository: FavDishRepository) : ViewModel() {
+
+
+    fun insert(dish: FavDish) = viewModelScope.launch {
+        // Call the repository function and pass the details.
+        repository.insertFavDishData(dish)
+    }
+
+    val allDishesList: LiveData<List<FavDish>> = repository.allDishesList.asLiveData()
+
+    fun update(dish: FavDish) = viewModelScope.launch {
+        repository.updateFavDishData(dish)
+    }
+
+    val favoriteDishes: LiveData<List<FavDish>> = repository.favoriteDishes.asLiveData()
+
+    fun delete(dish: FavDish) = viewModelScope.launch {
+        repository.deleteFavDishData(dish)
+    }
+
+    fun getFilteredList(value: String): LiveData<List<FavDish>> = repository.filteredListDishes(value).asLiveData()
+}
+
+
 class FavDishViewModelFactory(private val repository: FavDishRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(FavDishViewModel::class.java)) {
