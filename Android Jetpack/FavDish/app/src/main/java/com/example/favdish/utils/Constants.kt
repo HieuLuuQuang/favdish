@@ -13,6 +13,25 @@ object Constants {
     const val ALL_ITEMS: String = "All"
     const val FILTER_SELECTION: String = "FilterSelection"
 
+    const val API_ENDPOINT = "recipes/random"
+
+
+    // KEY PARAMS
+    const val API_KEY: String = "apiKey"
+    const val LIMIT_LICENSE: String = "limitLicense"
+    const val TAGS: String = "tags"
+    const val NUMBER: String = "number"
+
+    const val BASE_URL = "https://api.spoonacular.com/"
+
+    // API KEY VALUE from the spoonacular console.
+    const val API_KEY_VALUE: String = "ba990d639a0d4bd8966a51b0a63e9bd9"
+
+    // KEY PARAMS VALUES ==> YOU CAN CHANGE AS PER REQUIREMENT FROM HERE TO MAKE THE DIFFERNCE IN THE API RESPONSE.
+    const val LIMIT_LICENSE_VALUE: Boolean = true
+    const val TAGS_VALUE: String = "vegetarian, dessert"
+    const val NUMBER_VALUE: Int = 1     //random 1 dish
+
 
     fun dishTypes(): ArrayList<String>{
         val list = ArrayList<String>()
