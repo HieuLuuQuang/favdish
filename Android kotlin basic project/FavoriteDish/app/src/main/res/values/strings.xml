@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Favorite Dish</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="splash_screen_title">Favorite Dish</string>
+
+    <string name="action_add_dish">Add Dish</string>
+
+    <string name="image_contentDescription">image</string>
+    <string name="lbl_title">Title</string>
+    <string name="lbl_type">Type</string>
+    <string name="lbl_category">Category</string>
+    <string name="lbl_ingredients">Ingredients</string>
+    <string name="lbl_cooking_time_in_minutes">Cooking Time In Minutes</string>
+    <string name="lbl_direction_to_cook">Direction To Cook</string>
+    <string name="lbl_add_dish">ADD DISH</string>
+
+    <string name="title_select_image_action">Select Image Action</string>
+    <string name="lbl_camera">Camera</string>
+    <string name="lbl_gallery">Gallery</string>
+
+    <string name="title_select_dish_type">SELECT DISH TYPE</string>
+    <string name="title_select_dish_category">SELECT DISH CATEGORY</string>
+    <string name="title_select_dish_cooking_time">SELECT COOKING TIME IN MINUTES</string>
+
+    <string name="err_msg_select_dish_image">Select dish image.</string>
+    <string name="err_msg_enter_dish_title">Enter dish title.</string>
+    <string name="err_msg_select_dish_type">Select dish type.</string>
+    <string name="err_msg_select_dish_category">Select dish category.</string>
+    <string name="err_msg_enter_dish_ingredients">Enter dish ingredients.</string>
+    <string name="err_msg_select_dish_cooking_time">Select dish cooking time.</string>
+    <string name="err_msg_enter_dish_cooking_instructions">Enter dish cooking instructions.</string>
+</resources>
